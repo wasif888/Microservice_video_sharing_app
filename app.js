@@ -7,6 +7,7 @@ const cognito = new AWS.CognitoIdentityServiceProvider();
 const app = express();
 app.use(express.json());
 
+//sign up
 app.post('/signup', async (req, res) => {
     const { username, password, email } = req.body;
     const params = {
@@ -24,6 +25,7 @@ app.post('/signup', async (req, res) => {
     }
 });
 
+//login
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     const params = {
